@@ -10,7 +10,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mapbox.mapboxsdk.Mapbox;
+import com.mapbox.mapboxsdk.annotations.MarkerViewOptions;
+import com.mapbox.mapboxsdk.geometry.LatLng;
 import com.mapbox.mapboxsdk.maps.MapView;
+import com.mapbox.mapboxsdk.maps.MapboxMap;
+import com.mapbox.mapboxsdk.maps.OnMapReadyCallback;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -25,6 +29,15 @@ public class MainActivity extends AppCompatActivity {
 
         mapView = (MapView) findViewById(R.id.mapView);
         mapView.onCreate(savedInstanceState);
+
+        mapView.getMapAsync(new OnMapReadyCallback() {
+            @Override
+            public void onMapReady(MapboxMap mapboxMap) {
+                mapboxMap.addMarker(new MarkerViewOptions()
+                        .position(new LatLng(40.73581,-73.99155))
+                );
+            }
+        });
 
 
     }

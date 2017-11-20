@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Mapbox.getInstance(this, "pk.eyJ1IjoiZWxpYXMyMzAzIiwiYSI6ImNqYTcwZXpsaDNwZDYyd3FyYmNndnIyejcifQ.2ulZlJy0Dn7X2FWizGpMLg");
+        Mapbox.getInstance(this, "");
         setContentView(R.layout.activity_main);
 
         mapView = (MapView) findViewById(R.id.mapView);
